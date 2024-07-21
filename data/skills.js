@@ -19,7 +19,7 @@ export const skillData = [
   },
   {
     id: 3,
-    title: "Typescript",
+    title: "TypeScript",
     progress: 78,
     progressClass: "progress-bg-3",
   },

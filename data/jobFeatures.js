@@ -6,10 +6,10 @@ export const items = [
     bg: "bg-prink",
   },
   {
-    title: "Typescript",
+    title: "TypeScript",
     icon: "fa-thin fa-code",
     bg: "bg-catkrill",
-    description: "Expert en Typescript, j'écris un code propre et efficace pour un projet sans faille. Prêt à relever tous les défis, grands ou petits. Mon approche rigoureuse et méthodique assure une performance optimale et une maintenance facilitée de votre code, avec une robustesse exemplaire.",
+    description: "Expert en TypeScript, j'écris un code propre et efficace pour un projet sans faille. Prêt à relever tous les défis, grands ou petits. Mon approche rigoureuse et méthodique assure une performance optimale et une maintenance facilitée de votre code, avec une robustesse exemplaire.",
   },
   {
     icon: "fa-thin fa-palette",

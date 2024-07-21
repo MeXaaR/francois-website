@@ -54,18 +54,18 @@ export const portfolioData = [
     class: "isotop-item mockup design",
     bgClass: "bg-catkrill",
     imgSrc: "/assets/img/work/make.jpg",
-    subtitle: "Transformation en Typescript",
+    subtitle: "Transformation en TypeScript",
     title: "Migration de Make.org",
     target: "#portfolio-1",
-    category: ["Typescript", "React"],
+    category: ["TypeScript", "React"],
     project: "Site internet",
     client: "Make.org",
     previewLink: "https://make.org",
     previewName: "Make.org",
     desc: [
-      `Passer une plateforme React JS en Typescript. Réorganisation complète de
+      `Passer une plateforme React JS en TypeScript. Réorganisation complète de
       deux projets en un seul monorepo (Yarn et Lerna) avec passage de React à
-      React Typescript. Deux mois intenses ou le but était de comprendre un code
+      React TypeScript. Deux mois intenses ou le but était de comprendre un code
       non documenté pour le transformer en une code-base typée, compréhensible
       et facilement maintenable par un développeur connaissant le typescript.`,
       `La relation technique avec le client était faite avec un Lead Developer
