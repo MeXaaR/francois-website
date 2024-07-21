@@ -1,0 +1,15 @@
+export const knoledges = [
+  "ReactJs",
+  "NextJs",
+  "Meteor",
+  "MongoDB",
+  "Prisma",
+  "Svelte",
+  "GraphQL",
+  "Apollo",
+  "TypeScript",
+  "Material UI",
+  "Bulma",
+  "Styled Components",
+  "Redux",
+];
