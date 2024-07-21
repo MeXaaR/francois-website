@@ -13,11 +13,16 @@ export const portfolioData = [
     previewLink: "https://lacartonomades.fr",
     previewName: "La Carto'Nomades",
     desc: [
-      "Carte collaborative pour nomades et voyageurs. Il s'agit d'un projet personnel pour aider les gens à trouver les meilleurs endroits pour séjourner sans la foule."
+      `Carte collaborative pour nomades et voyageurs. Il s'agit d'un projet 
+      personnel pour aider les gens à trouver les meilleurs endroits 
+      pour séjourner sans la foule.`,
+      `Contrairement à beaucoup d'application sur le marché, toutes les fonctionnalités 
+      sont gratuites et sans publicité. Les utilisateurs peuvent ajouter des lieux et  
+      des photos Ils peuvent également filtrer les
+      lieux en fonction de leur préférences.`,
     ],
     startDate: '02/01/2021',
     endDate: 'Mise à jour en cours',
-    rate: 4
   },
   {
     class: "isotop-item mockup design",
@@ -46,7 +51,6 @@ export const portfolioData = [
     ],
     startDate: '01/10/2022',
     endDate: '01/08/2024',
-    rate: 4
   },
   {
     class: "isotop-item mockup design",
@@ -74,7 +78,6 @@ export const portfolioData = [
     ],
     startDate: '01/06/2021',
     endDate: '01/08/2021',
-    rate: 4
   },
   {
     class: "isotop-item mockup design",
@@ -102,7 +105,6 @@ export const portfolioData = [
     ],
     startDate: '02/02/2020',
     endDate: '01/08/2022',
-    rate: 4
   },
   {
     class: "isotop-item mockup design",
@@ -122,7 +124,6 @@ export const portfolioData = [
     ],
     startDate: '25/04/2024',
     endDate: '05/05/2024',
-    rate: 4
   },
   {
     class: "isotop-item mockup design",
@@ -156,7 +157,6 @@ export const portfolioData = [
     ],
     startDate: '01/11/2017',
     endDate: '01/06/2018',
-    rate: 4
   },
   {
     class: "isotop-item mockup design",
@@ -176,7 +176,6 @@ export const portfolioData = [
     ],
     startDate: '15/10/2016',
     endDate: '15/01/2017',
-    rate: 4
   }
 ];
 
