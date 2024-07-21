@@ -65,7 +65,7 @@ export default function Modal({ setShowModal, showModal, modalContent }) {
                     <h3 className="portfolio-modal-table-text">
                       <i className="fa-solid fa-code"></i>
                       Langages :{" "}
-                      <span>{modalContent?.languages.join(", ")}</span>
+                      <span>{modalContent?.category.join(", ")}</span>
                     </h3>
                   </div>
                   <div className="col-md-6">
