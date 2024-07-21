@@ -10,7 +10,7 @@ export const metadata = {
 export default function page() {
   return (
     <>
-      <div className="page-wrapper page-wrapper-2">
+      <div className="page-wrapper page-wrapper">
         <Header />
         <Portfolio />
       </div>

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Menu from "./Menu";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import MenuTwo from "./MenuTwo";
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -80,24 +81,8 @@ export default function Header() {
             <div className="col-lg-10 col-md-6 col-sm-8 col-8">
               <div className="header-right-flex">
                 <div className="bostami-main-menu-wrap ">
-                  <nav className="bastami-main-menu main_menu_2">
+                  <nav className="bastami-main-menu main_menu">
                     <ul style={{ display: "flex", alignItems: "center" }}>
-                      <li className={pathname == "/" ? "active" : ""}>
-                        <Link
-                          href="/"
-                          style={{ display: "flex", alignItems: "center" }}
-                        >
-                          <span>
-                            <Image
-                              width={20}
-                              height={20}
-                              src="/assets/img/icon/home.png"
-                              alt="icon"
-                            />
-                          </span>
-                          Accueil
-                        </Link>
-                      </li>
 
                       {menuItems.map((elm, i) => (
                         <li
@@ -131,8 +116,8 @@ export default function Header() {
                   </div>
                   <div className="menu-btn-wrap d-lg-none">
                     <div
-                      className={`menu-btn menu-btn-2 toggle_menu$ {menuOpen && "active"} `}
-                      onClick={() => setMenuOpen((pre) => !pre)}
+                      className={`menu-btn menu-btn-2 toggle_menu ${menuOpen && "active"} `}
+                      onClick={() => setMenuOpen(!menuOpen)}
                     >
                       <span></span>
                       <span></span>
@@ -146,8 +131,8 @@ export default function Header() {
         </div>
 
         <div className="mobile-menu-wrap">
-          <div className={`mobile-menu mobile_menu_2 ${menuOpen && "active"} `}>
-            <Menu setMenuOpen={setMenuOpen} data={menuItems} />
+          <div className={`mobile-menu mobile_menu ${menuOpen && "active"} `}>
+            <MenuTwo setMenuOpen={setMenuOpen} data={menuItems} />
           </div>
         </div>
       </div>

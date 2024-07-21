@@ -9,7 +9,7 @@ export const metadata = {
 export default function page() {
   return (
     <>
-      <div className="page-wrapper page-wrapper-2">
+      <div className="page-wrapper page-wrapper">
         <Header />
         <div className="bostami-page-area z-index-3">
           <div className="container">

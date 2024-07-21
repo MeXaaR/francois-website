@@ -8,7 +8,7 @@ import { menuItems } from "@/data/menu";
 export default function Menu() {
   const pathname = usePathname();
   return (
-    <div className="col-xxl-1 d-xxl-block d-none">
+    <div className="col-xxl-1 d-xxl-block">
       <div className="bostami-main-menu-wrap">
         <nav className="bastami-main-menu main_menu">
           <ul>
