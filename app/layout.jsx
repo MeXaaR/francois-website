@@ -2,6 +2,7 @@
 
 import { ToastContainer } from 'react-toastify'
 import '../public/main.scss'
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
         />
           {children}
         
-        
+        <Analytics />
         </body>
     </html>
   )
