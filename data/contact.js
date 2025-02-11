@@ -19,7 +19,7 @@ export const contactItems = [
     id: 3,
     iconSrc: "/assets/img/icon/map-icon.png",
     title: "Adresse ",
-    content: ["Kemijärvi, Finland"],
+    content: ["Toulouse, France"],
     bgColor: "bg-prink",
   },
 ];

@@ -2,9 +2,9 @@ import About from "@/components/About";
 import Header from "@/components/Header";
 import React from "react";
 export const metadata = {
-  title: "A Propos || François AUBEUT - Développeur Web",
+  title: "A Propos || François Aubeut - Développeur Web",
   description:
-    "Découvrez François AUBEUT, développeur web fullstack, spécialisé en ReactJS, NextJS, Meteor, MongoDB, Prisma, Svelte, GraphQL, Apollo, TypeScript, Material UI, Bulma, Styled Components, Redux",
+    "Découvrez François Aubeut, développeur web fullstack, spécialisé en ReactJS, NextJS, Meteor, MongoDB, Prisma, Svelte, GraphQL, Apollo, TypeScript, Material UI, Bulma, Styled Components, Redux",
 };
 export default function page() {
   return (

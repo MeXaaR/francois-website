@@ -71,10 +71,10 @@ body {
 }
 
 .btn-1 {
-    background: linear-gradient(97deg, var(--theme-secondary) 0%, var(--theme-secondary-darker) 100%);
+    background: var(--theme-secondary);
 }
 .btn-1:hover {
-    background: linear-gradient(197deg, var(--theme-secondary) 0%, var(--theme-secondary-darker) 100%);
+    background: var(--theme-secondary);
     color: #fff;
 }
 

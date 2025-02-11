@@ -41,9 +41,9 @@ CSS INDEX
   --common-white: #ffffff;
   --common-white-two: #ffffff;
   --common-black: #000;
-  --theme-primary: #1b74e4;
-  --theme-secondary: green;
-  --theme-secondary-darker: darkgreen;
+  --theme-primary: #ffaa17;
+  --theme-secondary: #ffaa17;
+  --theme-secondary-darker: darkorange;
   --body-text: #44566c;
   --body-heading: #000;
   --heading-black: #0f172a;
@@ -51,14 +51,16 @@ CSS INDEX
   --light-white-2: #f8fbfb;
   --prink: rgb(233, 247, 252)  ;
   --catkrill: rgb(230, 248, 230);
+  --background: transparent;
+  /* --background: linear-gradient(0deg, var(--light-white) 30%, var(--theme-secondary) 100%)  no-repeat border-box; */
 }
 
 :root .dark-theme {
   --common-white: #000;
   --common-black: #fff;
-  --theme-primary: #1b74e4;
-  --theme-secondary: green;
-  --theme-secondary-darker: darkgreen;
+  --theme-primary: #ffaa17;
+  --theme-secondary: #ffaa17;
+  --theme-secondary-darker: darkorange;
   --body-text: #a6a6a6;
   --body-heading: #fff;
   --heading-black: #0f172a;
@@ -66,6 +68,8 @@ CSS INDEX
   --light-white-2: #f8fbfb;
   --prink: #fff4f4;
   --catkrill: #eef5fa;
+  --background: transparent;
+  /* --background: linear-gradient(0deg, var(--heading-black) 30%, var(--theme-secondary) 100%); */
 }
 
 body {
@@ -1988,6 +1992,7 @@ textarea:focus::placeholder {
 .page-wrapper.page-wrapper {
   padding-top: 30px;
   padding-bottom: 60px;
+  background: var(--background);
 }
 
 .page-wrapper.page-wrapper.inner-page {
@@ -2089,6 +2094,7 @@ textarea:focus::placeholder {
 .bostami-page-area .bostami-page-wrap {
   background: #fff;
   border-radius: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px),
   only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2359,6 +2365,7 @@ textarea:focus::placeholder {
   margin-bottom: 20px;
 }
 .bastami-main-menu ul li a {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   display: block;
   font-size: 13px;
   text-transform: capitalize;
@@ -2520,19 +2527,6 @@ textarea:focus::placeholder {
   }
 }
 
-.page-wrapper.page-wrapper .bostami-header-logo .site-logo img {
-}
-@media (max-width: 767px) {
-  .page-wrapper.page-wrapper .bostami-header-logo .site-logo img {
-  }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-  .page-wrapper.page-wrapper .bostami-header-logo .site-logo img {
-  }
-}
-.dark-theme .page-wrapper.page-wrapper {
-  background-image: url(/assets/img/bg/page-bg-dark-0.jpg) !important;
-}
 .home-3 .text-right {
   text-align: right;
   margin-bottom: 40px;
@@ -2703,7 +2697,7 @@ textarea:focus::placeholder {
 .bostami-parsonal-info-area {
   width: 400px;
   border-radius: 20px;
-  background-color: var(--common-white);
+  /* background-color: var(--common-white); */
   text-align: center;
   padding: 40px 30px;
   margin-left: -100px;
@@ -4795,11 +4789,6 @@ textarea:focus::placeholder {
   overflow-y: scroll;
 }
 
-.dark-theme .page-wrapper .bostami-header-wrap,
-.dark-theme .page-wrapper .bostami-parsonal-info-area,
-.dark-theme .page-wrapper .bostami-main-menu-wrap {
-  background-color: #000;
-}
 .dark-theme .page-wrapper .mobile-menu-wrap .mobile_menu .mean-bar,
 .dark-theme .page-wrapper .mobile-menu-wrap .mobile_menu .mean-bar .mean-nav,
 .dark-theme .page-wrapper .bostami-parsonal-info-contact,
@@ -5203,5 +5192,9 @@ textarea:focus::placeholder {
   border-bottom-color: #333;
 }
 .dark-theme .bostami-parsonal-info-btn .btn-2 {
-  color: #333;
+  background-color: #333;
+  color: #fff;
+}
+.dark-theme .bostami-parsonal-info-btn .btn-2 * {
+  color: #fff;
 }

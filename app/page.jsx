@@ -4,7 +4,7 @@ import PersonalInfo from "@/components/PersonalInfo";
 import React from "react";
 
 export const metadata = {
-  title: "François Aubeut || Accueil",
+  title: "François Aubeut | Développeur Fullstack | Accueil",
   description:
     "François Aubeut est un développeur web fullstack nomade, spécialisé dans le développement d'applications web et mobiles.",
 };

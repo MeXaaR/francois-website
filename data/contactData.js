@@ -28,7 +28,7 @@ export const contactData = [
     iconClass: "fa-solid fa-location-dot",
     text: {
       label: "Lieu",
-      value: "Kemijärvi, Finland",
+      value: "Toulouse, France",
     },
   },
   {

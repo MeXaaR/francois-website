@@ -14,7 +14,7 @@ export const skillData = [
   {
     id: 4,
     title: "Intelligence Artificielle",
-    progress: 63,
+    progress: 73,
     progressClass: "progress-bg-4",
   },
   {

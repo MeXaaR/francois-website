@@ -15,7 +15,7 @@ export const socialMediaData = [
   {
     id: 4,
     className: "fa-brands fa-linkedin-in",
-    href: "https://www.linkedin.com/in/fran%C3%A7ois-aubeut-85b213319/",
+    href: "https://www.linkedin.com/in/francois-aubeut/",
     color: "#144679",
   },
 ];
