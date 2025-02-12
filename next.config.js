@@ -7,4 +7,8 @@ module.exports = {
     images: {
         unoptimized: true,
     },
+    env: {
+        MEXAR_URL: process.env.MEXAR_URL,
+        API_KEY: process.env.API_KEY,
+    },
 }

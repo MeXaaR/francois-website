@@ -1,9 +1,8 @@
-import { profileInfo } from "@/data/profileInfo";
-import { socialMediaData } from "@/data/socials";
 import Image from "next/image";
 import React from "react";
 
-export default function PersonalInfo() {
+export default function PersonalInfo({ data }) {
+  const { about } = data
   return (
     <div className="col-12">
       <div className="bostami-parsonal-info-area bostami-parsonal-info-2-area">
@@ -12,18 +11,18 @@ export default function PersonalInfo() {
             <Image
               width={240}
               height={240}
-              src={profileInfo.imageSrc}
+              src={`${process.env.MEXAR_URL}${about.image}`}
               alt="profile"
             />
           </div>
 
           <h4 className="bostami-parsonal-info-name">
-            <a href="#">{profileInfo.name}</a>
+            <a href="#">{about.title}</a>
           </h4>
-          <span className="bostami-parsonal-info-bio mb-15">{profileInfo.title}</span>
+          <span className="bostami-parsonal-info-bio mb-15">{about.job}</span>
 
           <ul className="bostami-parsonal-info-social-link mb-30">
-            {socialMediaData.map((elm, i) => (
+            {about.socials.map((elm, i) => (
               <li key={i}>
                 <a target="__blank" style={{ color: elm.color }} href={elm.href}>
                 {elm.imgSrc ? (
@@ -34,7 +33,7 @@ export default function PersonalInfo() {
                     alt={elm.href}
                   />
                 ):
-                  <i className={elm.className}></i>
+                  <i className={elm.icon}></i>
                 }
                 </a>
               </li>

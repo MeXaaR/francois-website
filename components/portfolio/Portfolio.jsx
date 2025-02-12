@@ -3,22 +3,24 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { filterButtons, portfolioData } from "@/data/portfolioData";
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Image from "next/image";
 
-export default function Portfolio() {
-  const [filteredItem, setFilteredItem] = useState([]);
-  const [activeTab, setActiveTab] = useState("Tout");
+export default function Portfolio({ portfolio }) {
+  const filterButtons = portfolio.tabBtns;
+  const [filteredItem, setFilteredItem] = useState(portfolio.items);
+  const [activeTab, setActiveTab] = useState(filterButtons[0]);
   const [modalContent, setModalContent] = useState();
   const [showModal, setShowModal] = useState(false);
+
+
   useEffect(() => {
-    if (activeTab == "Tout") {
-      setFilteredItem(portfolioData);
+    if (activeTab.id == filterButtons[0].id) {
+      setFilteredItem(portfolio.items);
     } else {
-      const filtered = portfolioData.filter((elm) =>
-        elm.category.includes(activeTab)
+      const filtered = portfolio.items.filter((elm) =>
+        elm.filter.includes(activeTab.tab)
       );
       setFilteredItem(filtered);
     }
@@ -43,23 +45,15 @@ export default function Portfolio() {
               <div className="row">
                 <div className="col-12">
                   <ul className="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
-                     <li
-                        onClick={() => setActiveTab("Tout")}
-                        className={`fillter-btn ${
-                          activeTab == "Tout" ? "is-checked" : ""
-                        } `}
-                      >
-                        Tout
-                      </li>
                     {filterButtons.map((elm, i) => (
                       <li
                         onClick={() => setActiveTab(elm)}
                         key={i}
                         className={`fillter-btn ${
-                          activeTab == elm ? "is-checked" : ""
+                          activeTab.id == elm.id ? "is-checked" : ""
                         } `}
                       >
-                        {elm}
+                        {elm.name}
                       </li>
                     ))}
                   </ul>
@@ -80,22 +74,22 @@ export default function Portfolio() {
                               exit={{ opacity: 0, scale: 0.5 }}
                               transition={{ duration: 0.3 }}
                               key={elm.id}
-                              className={elm.class}
-                              style={{ width: "100%" }}
+                              style={{ width: "100%", padding: 5 }}
                             >
                               <div
-                                style={{ width: "100%" }}
-                                className={`fillter-item ${elm.bgClass}`}
+                                style={{ width: "100%"}}
+                                className={`fillter-item`}
                               >
                                 <a className="img cursor-pointer">
                                   <Image
                                     width={310}
                                     style={{
                                       width: "100%",
-                                      height: "fit-content",
+                                      height: "cover",
+                                      objectFit: "cover",
                                     }}
-                                    height={310}
-                                    src={elm.imgSrc}
+                                    height={230}
+                                    src={`${process.env.MEXAR_URL}/images/gallery/${elm.image}`}
                                     alt="portfolio"
                                     onClick={() => {
                                       setModalContent(elm);
@@ -104,7 +98,7 @@ export default function Portfolio() {
                                   />
                                 </a>
                                 <span className="item-subtitle">
-                                  {elm.subtitle}
+                                  {elm.tagline}
                                 </span>
                                 <h6
                                   className="item-title"

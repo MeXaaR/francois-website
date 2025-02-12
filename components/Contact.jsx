@@ -1,12 +1,11 @@
 
+import apiClient from "@/utils/apiClient";
 import Image from "next/image";
-import { contactItems } from "@/data/contact";
-import ContactForm from "./ContactForm";
-import Email from "./Email";
 
+export default async function Contact() {
+  const data = await apiClient.get("/api/contact");
 
-export default function Contact() {
-  
+  const { contact } = data
 
   return (
     <div className="bostami-page-area z-index-3">
@@ -27,32 +26,68 @@ export default function Contact() {
               <div className="col-xl-4 col-lg-12">
                 <div className="bostami-contact-2-item-wrap mb-60">
                   <div className="row">
-                    {contactItems.map((elm, i) => (
-                      <div key={i} className="col-xl-12 col-lg-6">
+
+                    <div  className="col-xl-12 col-lg-6">
                         <div
-                          className={`bostami-contact-item  ${elm.bgColor} bg-prink mb-30`}
+                          className={`bostami-contact-item bg-prink mb-30`}
                         >
                           <div className="icon">
                             <Image
                               width={40}
                               height={40}
-                              src={elm.iconSrc}
+                              src="/assets/img/icon/phone-call.png"
                               alt="contact"
                             />
                           </div>
                           <div className="text">
-                            <h5 className="title">{elm.title} :</h5>
-                            {elm.hidden ? 
-                              <Email user={elm.user} domain={elm.domain} />
-                              :
-                              elm.content.map((elm2, i2) => (
-                              <span key={i2}>{elm2}</span>
-                            ))
-                            }
+                            <h5 className="title">Téléphone :</h5>
+                            <span>{contact.phone}</span>
                           </div>
                         </div>
                       </div>
-                    ))}
+
+                       <div  className="col-xl-12 col-lg-6">
+                        <div
+                          className={`bostami-contact-item bg-catkrill mb-30`}
+                        >
+                          <div className="icon">
+                            <Image
+                              width={40}
+                              height={40}
+                              src="/assets/img/icon/email-icon.png"
+                              alt="contact"
+                            />
+                          </div>
+                          <div className="text">
+                            <h5 className="title">Email :</h5>
+                            <span>{contact.email}</span>
+                          </div>
+                        </div>
+                      </div>
+
+
+                       <div  className="col-xl-12 col-lg-6">
+                        <div
+                          className={`bostami-contact-item bg-prink mb-30`}
+                        >
+                          <div className="icon">
+                            <Image
+                              width={40}
+                              height={40}
+                              src="/assets/img/icon/map-icon.png"
+                              alt="contact"
+                            />
+                          </div>
+                          <div className="text">
+                            <h5 className="title">Adresse :</h5>
+                            <span style={{
+                              textTransform: "capitalize", 
+                              wordBreak: "break-word"
+                              }}>{contact.address.split('\n').map((line, index) => <span key={index}>{line}<br /></span>)}</span>
+                          </div>
+                        </div>
+                      </div>
+
                   </div>
                 </div>
               </div>
@@ -63,7 +98,6 @@ export default function Contact() {
                     Je suis toujours ouvert à de nouvelles discussions pour un projet de développement web,
                   </h5>
                   <h5 className="contact-title-b">d'applications mobiles, de design ou de partenariats.</h5>
-                  {/* <ContactForm/> */}
                 </div>
               </div>
             </div>

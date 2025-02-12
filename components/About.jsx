@@ -1,21 +1,12 @@
-"use client";
-
-import { items } from "@/data/jobFeatures";
-import React, { useEffect, useState } from "react";
-import { clientLogos } from "@/data/clientLogos";
-
-import { Navigation, Pagination, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { bioData } from "@/data/bioData";
+import React from "react";
 import { contactData } from "@/data/contactData";
 import Image from "next/image";
-import { profileInfo } from "@/data/profileInfo";
 import Email from "./Email";
-export default function About() {
-  const [showSlider, setShowSlider] = useState(false);
-  useEffect(() => {
-    setShowSlider(true);
-  }, []);
+import LogosSlider from "./LogosSlider";
+
+export default function About({ data = {} }) {
+  const { about, services, clientLogos } = data
+
   return (
     <div className="bostami-page-wrap pt-60 pl-80 pr-80">
       <div className="page-tilte-2-wrap">
@@ -35,7 +26,7 @@ export default function About() {
               <Image
                 width={240}
                 height={240}
-                src={profileInfo.imageSrcThree}
+                src={`${process.env.MEXAR_URL}${about.image}`}
                 alt="profile"
               />
             </div>
@@ -43,10 +34,10 @@ export default function About() {
 
           <div className="col-lg-8 col-md-12">
             <div className="bostami-parsonal-info-wrap mb-40">
-              <h4 className="bostami-parsonal-info-title">Qui Suis-Je?</h4>
-              <p className="bostami-parsonal-info-bio-text">{bioData.descOne}</p>
+              <h4 className="bostami-parsonal-info-title">Qui suis-je?</h4>
+              <p className="bostami-parsonal-info-bio-text">{about.text}</p>
 
-              <p className="bostami-parsonal-info-bio-text">{bioData.desc}</p>
+              <p className="bostami-parsonal-info-bio-text">{about.text2}</p>
 
               <div className="bostami-parsonal-info-contact">
                 <h3 className="title">Info Perso</h3>
@@ -89,24 +80,44 @@ export default function About() {
             </div>
           </div>
 
-          {items.map((elm, i) => (
-            <div key={i} className="col-xl-4 col-lg-6 col-md-6">
-              <div className={`bostami-what-do-item ${elm.bg}`}>
+          {services.map((elm, i) => (
+            <div key={i} className="col-xl-4 col-lg-6 col-md-6" style={{ display: 'flex' }}>
+              <div className={`bostami-what-do-item ${elm.bg}`} style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div className="text">
                   <h4 className="title" style={{display: "flex", alignItems: "center"}}>
                     <div className="icon" style={{ marginRight: 15 }}>
-                      <i style={{ fontSize: 45, fontWeight: "bold" }} className={elm.icon}></i>
+                      <i style={{ fontSize: 30 , fontWeight: "bold" }} className={elm.info.iconFA}></i>
                     </div>
-                    <div>{elm.title} </div>
-                    
+                    <div>{elm.info.title} </div>
                   </h4>
-
-                  <p style={{ textAlign: "justify"}}>{elm.description}</p>
+                  <p>{elm.info.text}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Ajout du bouton "En savoir plus" */}
+      <div className="text-center mb-40">
+        <a 
+          href="https://mexar.fr" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="btn btn-2"
+          style={{
+            padding: '12px 25px',
+            borderRadius: '5px',
+            color: 'white',
+            textDecoration: 'none',
+            display: 'inline-block',
+            transition: 'all 0.3s ease',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          En savoir plus sur mexar.fr
+        </a>
       </div>
 
       <div className="client-2-wrap bg-light-white-2 pt-40 pb-65">
@@ -120,49 +131,7 @@ export default function About() {
           <div className="col-12">
             <div className="bostami-client-slider">
               <div className="swiper-container client_slide_active">
-                {showSlider && (
-                  <Swiper
-                    // {...setting}
-                    modules={[Navigation, Pagination, Autoplay]}
-                    // loop={true}
-                    spaceBetween={30}
-                    slidesPerView={2}
-                    loop={true}
-                    autoplay={{
-                      delay: 3000, // Time between each slide (in milliseconds)
-                      disableOnInteraction: false, // Set to false if you want the auto slider to continue even when the user interacts with the slider (e.g., clicking on a slide).
-                    }}
-                    breakpoints={{
-                      // when window width is >= 576px
-                      450: {
-                        slidesPerView: 3,
-                      },
-                      // when window width is >= 768px
-                      768: {
-                        slidesPerView: 4,
-                      },
-                      1200: {
-                        // when window width is >= 992px
-                        slidesPerView: 5,
-                      },
-                    }}
-                  >
-                    {clientLogos.map((elm, i) => (
-                      <SwiperSlide key={i}>
-                        <div className="swiper-slide">
-                          <Image
-                            height={62}
-                            width={400}
-                            style={{ height:'62px' }}
-                            className="bostami-client-slider-logo"
-                            src={elm.imgSrc}
-                            alt="client"
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                )}
+                <LogosSlider clientLogos={clientLogos} />
               </div>
             </div>
           </div>
