@@ -1,7 +1,6 @@
 const BASE_URL = process.env.MEXAR_URL;
 
 if (!BASE_URL) {
-    console.log(process.env.MEXAR_URL)
     console.warn('MEXAR_URL is not defined in environment variables');
 }
 
@@ -18,11 +17,11 @@ const apiClient = {
                 headers: {
                     'Content-Type': 'application/json',
                     "x-api-key": process.env.API_KEY,
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0',
                 },
-                cache: 'no-store',
+                // Remove no-cache headers and use next.js cache configuration
+                next: {
+                    revalidate: 3600 // Revalidate every hour
+                }
             });
 
             if (!response.ok) {
@@ -49,11 +48,8 @@ const apiClient = {
                 headers: {
                     'Content-Type': 'application/json',
                     "x-api-key": process.env.API_KEY,
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0',
                 },
-                cache: 'no-store',
+                // Remove no-cache headers since POST requests shouldn't be cached
                 body: JSON.stringify(data),
             });
 
