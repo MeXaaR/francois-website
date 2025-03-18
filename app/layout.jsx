@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <ThemeProvider>
-          <TravelingLines />
+          <TravelingLines>
           <ToastContainer
             position='top-right'
             autoClose={2000}
@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
           />
           {children}
           <Analytics />
+          </TravelingLines>
         </ThemeProvider>
       </body>
     </html>
