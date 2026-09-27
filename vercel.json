@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node scripts/build.mjs",
+  "installCommand": "",
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/cv.pdf", "destination": "/CV-Francois-Aubeut.pdf", "permanent": true },
+    { "source": "/a-propos", "destination": "/#about", "permanent": true },
+    { "source": "/resume", "destination": "/#experiences", "permanent": true },
+    { "source": "/portfolio", "destination": "/#projects", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
